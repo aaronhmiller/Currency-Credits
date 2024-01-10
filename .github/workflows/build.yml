@@ -40,5 +40,5 @@ jobs:
         with:
           push: true
           tags: oxdemo/oxswagger:latest
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64
 
