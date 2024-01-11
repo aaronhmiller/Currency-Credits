@@ -26,8 +26,8 @@ jobs:
           echo "Flags:     ${{ steps.buildx.outputs.flags }}"
           echo "Platforms: ${{ steps.buildx.outputs.platforms }}"
 
-      - name: Build the image multiplatform
-        run: docker buildx build --output "type=image,push=false" --platform linux/amd64 --tag oxdemo/oxswagger:latest --file ./Dockerfile .
+#      - name: Build the image multiplatform
+#        run: docker buildx build --output "type=image,push=false" --platform linux/amd64 --tag oxdemo/oxswagger:latest --file ./Dockerfile .
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
