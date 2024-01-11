@@ -14,6 +14,7 @@ import java.nio.file.Path;
 
 @Configuration
 @EnableSwagger2
+@EnableWebMvc
 public class SwaggerConfig {
 
 	@Bean
