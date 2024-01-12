@@ -41,5 +41,5 @@ jobs:
           push: true
           tags: aaronhmiller/oxswagger:latest
           secrets: |
-            "github_token=${{ secrets.GH_FINEGRAINED_TOKEN }}
+            "github_token=${{ secrets.GH_FINEGRAINED_TOKEN }}"
           platforms: linux/amd64,linux/arm64
