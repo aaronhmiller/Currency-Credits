@@ -27,7 +27,7 @@ jobs:
           echo "Platforms: ${{ steps.buildx.outputs.platforms }}"
 
       - name: Build the image multiplatform
-        run: docker buildx build --output "type=image,push=false" --platform linux/amd64,linux/arm64 --tag aaronhmiller/oxswagger:latest --file ./Dockerfile .
+        run: docker buildx build --output "type=image,push=false" --secrets github_token=${{ secrets.GH_FINEGRAINED_TOKEN }} --platform linux/amd64,linux/arm64 --tag aaronhmiller/oxswagger:latest --file ./Dockerfile .
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
@@ -40,5 +40,6 @@ jobs:
         with:
           push: true
           tags: aaronhmiller/oxswagger:latest
+          secrets: |
+            "github_token=${{ secrets.GH_FINEGRAINED_TOKEN }}
           platforms: linux/amd64,linux/arm64
-
