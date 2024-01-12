@@ -1,7 +1,8 @@
 #
 # Build stage
 #
-FROM maven:3.6.0-jdk-11-slim AS build
+#FROM maven:3.6.0-jdk-11-slim AS build
+FROM maven:3.8.7-openjdk-18-slim AS build
 COPY src /home/app/src
 COPY pom.xml /home/app
 
