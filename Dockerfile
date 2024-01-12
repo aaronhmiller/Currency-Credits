@@ -9,7 +9,7 @@ COPY pom.xml /home/app
 #Personal access token are an alternative to using passwords 
 #for authentication to GitHub when using the GitHub API or the command line. 
 #Personal access tokens are intended to access GitHub resources on behalf of yourself.
-#RUN echo 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 > /home/app/key.json
+#RUN echo SECRET_GOES_HERE > /home/app/key.json
 
 RUN --mount=type=secret,id=github_token \
   cat /run/secrets/github_token > /home/app/key.json
