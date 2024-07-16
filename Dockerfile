@@ -15,7 +15,7 @@ RUN mvn -f /home/app/pom.xml clean package
 #
 # Package stage
 #
-FROM openjdk:11-jre-slim
+FROM openjdk:11.0.1-jre-slim-sid
 COPY --from=build /home/app/target/swagger-0.0.1-SNAPSHOT.jar /usr/local/lib/demo.jar
 
 EXPOSE 8080
